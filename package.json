@@ -1,0 +1,30 @@
+{
+  "name": "generator-ansible",
+  "version": "0.0.0",
+  "description": "A yo generator to produce an ansible role skeleton",
+  "keywords": [
+    "yeoman-generator",
+    "ansible",
+    "ansible-role",
+    "generator",
+    "yeoman",
+    "skeleton",
+    "scaffold"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.20.2"
+  },
+  "peerDependencies": {
+    "generator-license": "3.x"
+  },
+  "author": "Will Price",
+  "license": "Apache-2.0",
+  "files": [
+    "app"
+  ],
+  "devDependencies": {
+    "generator-license": "^3.1.1",
+    "yeoman-assert": "^2.1.1",
+    "yeoman-test": "^1.1.0"
+  }
+}
