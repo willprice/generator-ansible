@@ -1,6 +1,7 @@
 # [generator-ansible](https://github.com/willprice/generator-ansible)
 
 [![Build Status](https://travis-ci.org/willprice/generator-ansible.svg?branch=master)](https://travis-ci.org/willprice/generator-ansible)
+[![codecov.io](https://codecov.io/github/willprice/generator-ansible/coverage.svg?branch=master)](https://codecov.io/github/willprice/generator-ansible?branch=master)
 
 A [Yeoman](http://yeoman.io) generator for [Ansible](https://www.ansible.com/)
 playbooks and roles.
