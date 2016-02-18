@@ -25,6 +25,10 @@ describe("yo ansible", function() {
         assert.file('site.yml');
     });
 
+    it('README.md has name of playbook in it', function() {
+        assert.fileContent('README.md', playbookName);
+    });
+
     it('produces a play file for each play specified', function() {
         var playFiles = plays.map(function(play) { return util.format("plays/%s.yml", play); });
         assert.file(playFiles);
