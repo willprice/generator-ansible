@@ -2,3 +2,10 @@ language: node_js
 node_js:
     - node
     - stable
+before_install:
+    - pip install codecov
+script:
+    - npm test
+    - npm run coverage
+after_success:
+    - codecov
