@@ -3,12 +3,13 @@ node_js:
     - node
     - stable
 before_install:
-    - npm install codecov
+    - npm install codecov codeclimate-test-reporter
 script:
     - npm test
-    - npm run coverage
+    - npm run coverage-report
 after_success:
     - ./node_modules/.bin/codecov
+    - ./node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info
 addons:
     code_climate:
         repo_token: 827ee77036124856822bfe501806bd0d5277493a1c07ef424e2e5a79ee414e7d
