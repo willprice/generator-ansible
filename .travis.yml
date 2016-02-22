@@ -9,3 +9,6 @@ script:
     - npm run coverage
 after_success:
     - ./node_modules/.bin/codecov
+addons:
+    code_climate:
+        repo_token: 827ee77036124856822bfe501806bd0d5277493a1c07ef424e2e5a79ee414e7d

@@ -2,6 +2,10 @@
 
 [![Build Status](https://travis-ci.org/willprice/generator-ansible.svg?branch=master)](https://travis-ci.org/willprice/generator-ansible)
 [![codecov.io](https://codecov.io/github/willprice/generator-ansible/coverage.svg?branch=master)](https://codecov.io/github/willprice/generator-ansible?branch=master)
+[![Code
+Climate](https://codeclimate.com/github/willprice/generator-ansible/badges/gpa.svg)](https://codeclimate.com/github/willprice/generator-ansible)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![devDependencies](https://david-dm.org/willprice/generator-ansible.svg)](https://david-dm.org/willprice/generator-ansible)
 
 A [Yeoman](http://yeoman.io) generator for [Ansible](https://www.ansible.com/)
 playbooks and roles.
