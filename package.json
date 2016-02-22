@@ -1,6 +1,5 @@
 {
   "name": "generator-ansible",
-  "version": "0.0.0",
   "description": "A yeoman generator to create ansible playbooks and roles.",
   "keywords": [
     "yeoman-generator",
@@ -27,10 +26,16 @@
     "istanbul": "0.4.x",
     "mocha": "2.4.x",
     "yeoman-assert": "2.1.x",
-    "yeoman-test": "1.1.x"
+    "yeoman-test": "1.1.x",
+    "semantic-release": "^4.3.5"
   },
   "scripts": {
     "test": "./node_modules/.bin/mocha",
-    "coverage": "./node_modules/.bin/istanbul cover _mocha"
+    "coverage": "./node_modules/.bin/istanbul cover _mocha",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/willprice/generator-ansible.git"
   }
 }
