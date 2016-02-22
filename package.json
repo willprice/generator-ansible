@@ -12,7 +12,7 @@
     "scaffold"
   ],
   "dependencies": {
-    "yeoman-generator": "^0.20.2"
+    "yeoman-generator": "0.22.x"
   },
   "peerDependencies": {
     "generator-license": "3.x"
@@ -23,11 +23,11 @@
     "app"
   ],
   "devDependencies": {
-    "generator-license": "^3.1.1",
-    "istanbul": "^0.4.2",
-    "mocha": "^2.4.5",
-    "yeoman-assert": "^2.1.1",
-    "yeoman-test": "^1.1.0"
+    "generator-license": "3.1.x",
+    "istanbul": "0.4.x",
+    "mocha": "2.4.x",
+    "yeoman-assert": "2.1.x",
+    "yeoman-test": "1.1.x"
   },
   "scripts": {
     "test": "./node_modules/.bin/mocha",
