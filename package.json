@@ -1,6 +1,7 @@
 {
   "name": "generator-ansible-2",
   "description": "A yeoman generator to create ansible playbooks and roles.",
+  "version": "0.0.1",
   "keywords": [
     "yeoman-generator",
     "ansible",
