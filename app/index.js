@@ -11,6 +11,12 @@ module.exports = generators.Base.extend({
     })
   },
 
+  _copyTemplateToDesination: function (templatePath, destinationPath, context) {
+    this.fs.copyTpl(this.templatePath(templatePath),
+                    this.destinationPath(destinationPath),
+                    context)
+  },
+
   prompting: {
     askForPlaybookName: function () {
       function createInputPrompt (variableName, message, defaultValue, type) {
@@ -53,7 +59,6 @@ module.exports = generators.Base.extend({
       var self = this
       var folders = [
         'host_vars',
-        'group_vars',
         'group_vars'
       ]
       folders.forEach(function (folder) {
@@ -62,32 +67,26 @@ module.exports = generators.Base.extend({
     },
 
     createReadMeFile: function () {
-      this.fs.copyTpl(this.templatePath('README.md.ejs'),
-        this.destinationPath('README.md'),
-        playbookVars
-      )
+      var self = this
+      self._copyTemplateToDesination('README.md.ejs', 'README.md', playbookVars)
     },
 
     createSitePlaybook: function () {
-      this.fs.copyTpl(this.templatePath('site.yml'),
-        this.destinationPath('site.yml'),
-        playbookVars
-      )
+      var self = this
+      self._copyTemplateToDesination('site.yml', 'site.yml', playbookVars)
     },
 
     createHostVarsFiles: function () {
       var self = this
       playbookVars.hosts.forEach(function (host) {
-        self.fs.copyTpl(self.templatePath('host_vars/host_var.ejs'),
-          self.destinationPath('host_vars/' + host), {})
+        self._copyTemplateToDesination('host_vars/host_var.ejs', 'host_vars/' + host)
       })
     },
 
     createGroupVarsFiles: function () {
       var self = this
       playbookVars.groups.forEach(function (group) {
-        self.fs.copyTpl(self.templatePath('group_vars/group_var.ejs'),
-          self.destinationPath('group_vars/' + group), {})
+        self._copyTemplateToDesination('group_vars/group_var.ejs', 'group_vars/' + group)
       })
     },
 
