@@ -18,7 +18,7 @@
     "generator-license": "3.x"
   },
   "author": "Will Price",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "files": [
     "app"
   ],
