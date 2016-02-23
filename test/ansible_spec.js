@@ -52,3 +52,4 @@ describe('yo ansible', function () {
     assert.file(hostVarFiles)
   })
 })
+

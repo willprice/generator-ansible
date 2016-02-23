@@ -1,51 +1,17 @@
 'use strict'
-var generators = require('yeoman-generator')
+var AnsibleBaseGenerator = require('../lib/BaseAnsibleGenerator')
 
 var playbookVars = {}
 
-module.exports = generators.Base.extend({
-  constructor: function () {
-    generators.Base.apply(this, arguments)
-    this.composeWith('license', {}, {
-      link: 'weak'
-    })
-  },
-
-  _copyTemplateToDesination: function (templatePath, destinationPath, context) {
-    this.fs.copyTpl(this.templatePath(templatePath),
-                    this.destinationPath(destinationPath),
-                    context)
-  },
-
+module.exports = AnsibleBaseGenerator.extend({
   prompting: {
     askForPlaybookName: function () {
-      function createInputPrompt (variableName, message, defaultValue, type) {
-        return {
-          'type': 'input',
-          'message': message,
-          'name': variableName,
-          'default': defaultValue
-        }
-      }
-
-      function createListInputPrompt (variableName, message) {
-        return {
-          'type': 'input',
-          'message': message,
-          'name': variableName,
-          'default': [],
-          'filter': function (answers) {
-            return answers.split(' ')
-          }
-        }
-      }
-
       var done = this.async()
       var prompts = [
-        createInputPrompt('playbookName', "Specify the playbook's name?", this.appname),
-        createListInputPrompt('groups', 'Specify the groups you intend to use'),
-        createListInputPrompt('hosts', 'Specify the hosts you intend to provision'),
-        createListInputPrompt('plays', 'Specify the plays you intend to write')
+        this._createInputPrompt('playbookName', "Specify the playbook's name?", this.appname),
+        this._createListInputPrompt('groups', 'Specify the groups you intend to use'),
+        this._createListInputPrompt('hosts', 'Specify the hosts you intend to provision'),
+        this._createListInputPrompt('plays', 'Specify the plays you intend to write')
       ]
       this.prompt(prompts, function (answers) {
         playbookVars = answers
@@ -104,5 +70,5 @@ module.exports = generators.Base.extend({
   },
 
   install: {
-  },
+  }
 })
