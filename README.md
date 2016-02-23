@@ -6,6 +6,7 @@
 Climate](https://codeclimate.com/github/willprice/generator-ansible/badges/gpa.svg)](https://codeclimate.com/github/willprice/generator-ansible)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![devDependencies](https://david-dm.org/willprice/generator-ansible.svg)](https://david-dm.org/willprice/generator-ansible)
+[![npm](https://img.shields.io/npm/v/generator-ansible-2.svg)](https://www.npmjs.com/package/generator-ansible-2)
 
 A [Yeoman](http://yeoman.io) generator for [Ansible](https://www.ansible.com/)
 playbooks and roles.
