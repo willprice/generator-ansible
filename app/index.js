@@ -22,50 +22,48 @@ module.exports = AnsibleBaseGenerator.extend({
 
   writing: {
     createDirectoryStructure: function () {
-      var self = this
       var folders = [
         'host_vars',
         'group_vars'
       ]
       folders.forEach(function (folder) {
-        self.fs.write(self.destinationPath(folder + '/.gitkeep'), '')
-      })
+        this.fs.write(this.destinationPath(folder + '/.gitkeep'), '')
+      }.bind(this))
     },
 
     createReadMeFile: function () {
-      var self = this
-      self._copyTemplateToDesination('README.md.ejs', 'README.md', playbookVars)
+      this._copyTemplateToDesination('README.md.ejs', 'README.md', playbookVars)
     },
 
     createSitePlaybook: function () {
-      var self = this
-      self._copyTemplateToDesination('site.yml', 'site.yml', playbookVars)
+      this._copyTemplateToDesination('site.yml', 'site.yml', playbookVars)
+    },
+
+    createRolesDirectory: function () {
+      this._createEmptyFile('roles/.gitkeep')
     },
 
     createHostVarsFiles: function () {
-      var self = this
       playbookVars.hosts.forEach(function (host) {
-        self._copyTemplateToDesination('host_vars/host_var.ejs', 'host_vars/' + host)
-      })
+        this._copyTemplateToDesination('host_vars/host_var.ejs', 'host_vars/' + host)
+      }.bind(this))
     },
 
     createGroupVarsFiles: function () {
-      var self = this
       playbookVars.groups.forEach(function (group) {
-        self._copyTemplateToDesination('group_vars/group_var.ejs', 'group_vars/' + group)
-      })
+        this._copyTemplateToDesination('group_vars/group_var.ejs', 'group_vars/' + group)
+      }.bind(this))
     },
 
     createPlayFiles: function () {
-      var self = this
       playbookVars.plays.forEach(function (play) {
-        self.fs.copyTpl(self.templatePath('site.yml'),
-          self.destinationPath('plays/' + play + '.yml'),
+        this.fs.copyTpl(this.templatePath('site.yml'),
+          this.destinationPath('plays/' + play + '.yml'),
           {
             playbookName: play,
             hosts: playbookVars.hosts
           })
-      })
+      }.bind(this))
     }
   },
 

@@ -51,5 +51,9 @@ describe('yo ansible', function () {
     var hostVarFiles = hosts.map(function (host) { return util.format('host_vars/%s', host); })
     assert.file(hostVarFiles)
   })
+
+  it('creates a roles directory', function() {
+    assert.file('roles/.gitkeep')
+  })
 })
 

@@ -9,13 +9,13 @@ module.exports = AnsibleBaseGenerator.extend({
     prompts: function () {
       var done = this.async()
       var prompts = [
-        this._createInputPrompt('name', 'License?', this.appname),
-        this._createInputPrompt('license', 'License?', 'BSD')
+        this._createInputPrompt('name', 'Role name?', this.appname),
       ]
       this.prompt(prompts, function (answers) {
         roleOptions = answers
+        roleOptions.license = this.licenseOptions.license
         done()
-      })
+      }.bind(this))
     }
   },
 

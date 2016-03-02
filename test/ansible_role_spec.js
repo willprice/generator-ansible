@@ -1,5 +1,6 @@
-'use strict'
 /* eslint-env mocha */
+'use strict'
+
 var path = require('path')
 var helpers = require('yeoman-test')
 var assert = require('yeoman-assert')
@@ -8,8 +9,7 @@ describe('yo ansible:role', function () {
   before(function (done) {
     helpers.run(path.join(__dirname, '../role'))
       .withPrompts({
-        name: 'TEST-ROLE',
-        license: 'MIT'
+        name: 'TEST-ROLE'
       })
       .withGenerators([[helpers.createDummyGenerator(), 'license']])
       .on('end', done)
@@ -22,10 +22,6 @@ describe('yo ansible:role', function () {
 
     it('has the role name in it', function () {
       assert.fileContent('README.md', 'TEST-ROLE')
-    })
-
-    it('has the license in it', function () {
-      assert.fileContent('README.md', 'MIT')
     })
   })
 
@@ -42,7 +38,7 @@ describe('yo ansible:role', function () {
   })
 
   describe('vars/', function () {
-    it('has a main.yml', function() {
+    it('has a main.yml', function () {
       assert.file('vars/main.yml')
     })
   })
