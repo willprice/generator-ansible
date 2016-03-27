@@ -17,7 +17,7 @@ Note, this generator conflicts with the [existing generator](https://www.npmjs.c
 on npm.
 
 ```sh
-$ npm install git+https://git@github.com/will.price/generator-ansible
+$ npm install git+git://git@github.com:willprice/generator-ansible.git
 $ yo ansible         # generate a playbook
 $ yo ansible:role    # generate a role
 ```
