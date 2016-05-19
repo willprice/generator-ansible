@@ -12,7 +12,8 @@
     "scaffold"
   ],
   "dependencies": {
-    "yeoman-generator": "0.22.x"
+    "yeoman-generator": "0.22.x",
+    "yeoman-option-or-prompt": "^1.0.2"
   },
   "peerDependencies": {
     "generator-license": "3.x"

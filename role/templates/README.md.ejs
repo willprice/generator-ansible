@@ -1,12 +1,12 @@
 # Ansible Role: <%= name %>
 
-This is an Ansible role meant for use in an Ansible playbooks
+Author: <% if (typeof author != "undefined") { %><%= author %><% } %> <% if (typeof email != "undefined") { %>(<%= email %>)
+<% } %>
+<%= description %>
 
+<% if (typeof dependencies == "array") { %>
 ## Dependencies
-
-
-## Variables
-
-| *Variable* | *Default value* | *Values* | *Description * |
-|------------+-----------------+----------+----------------|
-|            |                 |          |                |
+<% for(var i = 0; i < dependencies.length; i++) { %>
+- <%= dependencies[i] %>
+<% } %>
+<% } %>

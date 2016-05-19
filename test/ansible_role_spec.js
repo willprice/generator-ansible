@@ -6,28 +6,60 @@ var helpers = require('yeoman-test')
 var assert = require('yeoman-assert')
 
 describe('yo ansible:role', function () {
+  var name = "Test-Role"
+  var author = "Will Price";
+  var email = "will.price94@gmail.com";
+  var description = "I am a test role";
+
   before(function (done) {
     helpers.run(path.join(__dirname, '../role'))
       .withPrompts({
-        name: 'TEST-ROLE'
+        name: name,
+        description: description,
+        author: author,
+        email: email
       })
       .withGenerators([[helpers.createDummyGenerator(), 'license']])
       .on('end', done)
   })
 
   describe('README.md', function () {
+    var readme_path = 'README.md'
+
     it('is created', function () {
-      assert.file('README.md')
+      assert.file(readme_path)
     })
 
-    it('has the role name in it', function () {
-      assert.fileContent('README.md', 'TEST-ROLE')
+    it('has the role name', function () {
+      assert.fileContent(readme_path, name)
+    })
+
+    it('has the role description', function () {
+      assert.fileContent(readme_path, description)
+    })
+
+    it('has the author', function () {
+      assert.fileContent(readme_path, author)
+    })
+
+    it('has the author email', function () {
+      assert.fileContent(readme_path, email)
     })
   })
 
   describe('meta/', function () {
+    var meta_main_path = 'meta/main.yml'
+
     it('has a main.yml', function () {
-      assert.file('meta/main.yml')
+      assert.file(meta_main_path)
+    })
+
+    it('has author in main.yml', function () {
+      assert.fileContent(meta_main_path, author)
+    })
+
+    it('has the description in main.yml', function () {
+      assert.fileContent(meta_main_path, description)
     })
   })
 
