@@ -18,8 +18,8 @@ on npm.
 
 ```sh
 $ npm i generator-ansible-2
-$ yo ansible         # generate a playbook
-$ yo ansible:role    # generate a role
+$ yo ansible-2         # generate a playbook
+$ yo ansible-2:role    # generate a role
 ```
 
 ## Developer Usage
