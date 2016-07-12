@@ -21,7 +21,9 @@
   "author": "Will Price",
   "license": "MIT",
   "files": [
-    "app"
+      "lib",
+      "app",
+      "role"
   ],
   "devDependencies": {
     "cz-conventional-changelog": "^1.1.5",
