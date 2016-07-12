@@ -38,6 +38,10 @@ module.exports = AnsibleBaseGenerator.extend({
       this._copyTemplateToDesination('site.yml', 'site.yml', playbookOptions)
     },
 
+    createInventoryFile: function () {
+      this._copyTemplateToDesination('inventory.ejs', 'inventory', playbookOptions)
+    },
+
     createRolesDirectory: function () {
       this._createEmptyFile('roles/.gitkeep')
     },
