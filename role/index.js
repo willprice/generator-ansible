@@ -1,25 +1,20 @@
 'use strict'
 
 var AnsibleBaseGenerator = require('../lib/BaseAnsibleGenerator')
-var optionOrPrompt = require('yeoman-option-or-prompt')
 
 var roleOptions
 
 module.exports = AnsibleBaseGenerator.extend({
-  _optionOrPrompt: optionOrPrompt,
-
   prompting: {
     prompts: function () {
       var done = this.async()
 
-      var prompts = [
-        this._createInputPrompt('name', 'Role name?', this.appname),
-        this._createInputPrompt('description', 'Description?'),
-        this._createInputPrompt('author', 'Author?'),
-        this._createInputPrompt('email', 'Email?'),
-      ]
+      this._addInputPrompt('name', 'Role name?', this.appname),
+      this._addInputPrompt('description', 'Description?'),
+      this._addInputPrompt('author', 'Author?'),
+      this._addInputPrompt('email', 'Email?'),
 
-      this._optionOrPrompt(prompts, function (answers) {
+      this._optionOrPrompt(this._prompts, function (answers) {
         roleOptions = answers
         done()
       }.bind(this))
