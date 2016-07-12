@@ -67,7 +67,11 @@ module.exports = AnsibleBaseGenerator.extend({
             hosts: playbookOptions.hosts
           })
       }.bind(this))
-    }
+    },
+
+    createDeployScript: function() {
+      this._copyTemplateToDesination('deploy.sh', 'deploy.sh', playbookOptions)
+    },
   },
 
   install: {

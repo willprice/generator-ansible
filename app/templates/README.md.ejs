@@ -1,6 +1,6 @@
 # <%= playbookName %>
 
-## How to
+## Usage
 First install the necessary prerequisites for this playbook and then
 populate the inventory directory with the machines you'd like to
 provision.
@@ -24,8 +24,11 @@ $ echo "[webservers]\nwebserver.local" > ./inventory/webservers
 
 ### Provisioning
 ```sh
-$ ansible-playbook -i ./inventory/webservers site.yml [--ask-become-pass]
+$ ansible-playbook --inventory-file=inventory site.yml [--ask-become-pass]
 ```
+A helper script, `deploy.sh` has been provided to run this command for you.
+
+Author: <%= author %>
 
 Generated using
 [generator-ansible](http://github.com/willprice/generator-ansible) with
