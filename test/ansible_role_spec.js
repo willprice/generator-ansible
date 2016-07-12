@@ -12,14 +12,13 @@ describe('yo ansible:role', function () {
   var description = "I am a test role";
 
   before(function (done) {
-    helpers.run(path.join(__dirname, '../role'))
+    helpers.run(require.resolve('../role'))
       .withPrompts({
         name: name,
         description: description,
         author: author,
         email: email
       })
-      .withGenerators([[helpers.createDummyGenerator(), 'license']])
       .on('end', done)
   })
 
